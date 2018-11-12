@@ -5,3 +5,7 @@ authors = ["Yue Wang yue.official.jp@gmail.com"]
 description = "server with expressjs api in rust."
 license = "MIT"
 repository = "https://github.com/necroplankton/chapel"
+
+[[test]]
+name = "main"
+path = "tests/test.rs"
