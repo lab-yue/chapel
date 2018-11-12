@@ -1,7 +1,7 @@
 //use std::net;
 //mod common;
-use request::Request;
-use response::Response;
+//use request::Request;
+//use response::Response;
 use std::io::prelude::*;
 use std::net::TcpListener;
 use std::net::TcpStream;
@@ -15,7 +15,7 @@ impl Chapel {
         println!("Chapel, constructed!");
 
         let addr = "127.0.0.1:".to_owned() + &port.to_string();
-        println!("{}", addr);
+        println!("Local: {}", addr);
 
         let listener = TcpListener::bind(addr).unwrap();
 
@@ -31,11 +31,11 @@ impl Chapel {
         stream.read(&mut buffer).unwrap();
 
      
-        let response = format!("HTTP/1.1 200 OK\r\n\r\n{}", HTML);
+        let response = format!("HTTP/1.1 200 OK\nX-Powered-By: Chapel/0.0.1\r\n\r\n{}", HTML);
 
         stream.write(response.as_bytes()).unwrap();
         stream.flush().unwrap();
     }
 
-    pub fn handle(req: Request, res: Response, callback: &Fn()) {}
+    //pub fn handle(req: Request, res: Response, callback: &Fn()) {}
 }

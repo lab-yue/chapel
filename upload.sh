@@ -12,6 +12,8 @@ cd ..
 
 # upload rs
 
+git add .
+
 git commit -m "prototype dev $DATE"
 
 git push origin master
